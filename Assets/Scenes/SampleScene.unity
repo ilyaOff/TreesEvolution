@@ -257,8 +257,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.06228033, y: 0.115749106, z: -0.0072721806, w: 0.9912973}
-  m_LocalPosition: {x: 10.25, y: 5.36, z: -7.9}
+  m_LocalRotation: {x: -0.11353107, y: 0.28545433, z: -0.034076724, w: -0.95103383}
+  m_LocalPosition: {x: 21.907028, y: 3.2348728, z: 11.267445}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -313,6 +313,7 @@ MonoBehaviour:
   maxTlmeToLive: 100
   prefNode: {fileID: 3402565340615640912, guid: 06ab794e48d2e2c47879bb29862e5984,
     type: 3}
+  DNA: 
   bodyNodes: []
 --- !u!4 &782337727
 Transform:
