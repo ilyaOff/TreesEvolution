@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class Tree : MonoBehaviour
 {
-    private static int countRules = 6;
-    private static int lengthDNA = 50;
-    public int timeToLive = 30;
-    public int maxTlmeToLive = 100;
+    public static readonly int countRules = 6;
+    public static readonly int lengthDNA = 50;    
+    
+    public readonly int maxTlmeToLive = 100;
+    public readonly int currentTimeToLive = 30;
+    [SerializeField]
+    private int timeToLive = 30;
 
     public Transform prefNode;
     [SerializeField]
