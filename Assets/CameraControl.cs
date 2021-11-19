@@ -22,8 +22,20 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += speed * Time.deltaTime * Vector3.Normalize(Input.GetAxis("Vertical") * transform.forward
-                                                + Input.GetAxis("Horizontal") * transform.right);
+        Vector3 newPosition = Input.GetAxis("Vertical") * transform.forward
+                            + Input.GetAxis("Horizontal") * transform.right;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            newPosition += Vector3.up;
+        }
+        else if (Input.GetKey(KeyCode.LeftControl))
+        {
+            newPosition -= Vector3.up;
+        }
+
+        transform.position += speed * Time.deltaTime * Vector3.Normalize(newPosition);
+        
+
 
         angleHorizontal += speedRotation * Time.deltaTime * Input.GetAxis("Mouse X");
         angleVertical += speedRotation * Time.deltaTime * -Input.GetAxis("Mouse Y");

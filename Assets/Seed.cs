@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Seed : MonoBehaviour
 {
+    public Tree prefTree;
     private int[] DNA;
     private int treeTTL;
     [SerializeField]
@@ -35,12 +36,25 @@ public class Seed : MonoBehaviour
     void Update()
     {
         if (rb != null)
-        { 
+        {
             //проверить, находится ли на земле
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f))
+            {
+                if (hit.transform.name.Equals("Terrain"))
+                {
+                    Tree tree = Instantiate(prefTree,
+                       transform.position + Vector3.down, Quaternion.identity, null);
+                    tree.DNA = this.DNA;
+                    Destroy(this.transform.gameObject);
+                }
+            }
+            if(transform.position.y < -100)
+                Destroy(this.transform.gameObject);
         }
     }
 
-    void Drop()
+    public void Drop()
     {
         transform.parent = null;
         rb = gameObject.AddComponent<Rigidbody>();
